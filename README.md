@@ -1,4 +1,4 @@
-# FSAstore
+# Pwned
 Pwned Password Checker
 
 
