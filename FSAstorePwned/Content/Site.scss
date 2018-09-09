@@ -1,0 +1,43 @@
+﻿//GLOBALS
+$highlight: #4e8bd2;
+$darker: darken($highlight,30%);
+
+
+.btnDefault {
+    background-color: $highlight;
+    color: white;
+
+    &hover {
+        background-color: $darker;
+    }
+}
+//GLOBALS
+
+
+.navbar {
+    .navbar-brand, .nav-link, a {
+        color: white !important;
+
+        &:hover {
+            color: $highlight;
+            text-decoration: none !important;
+        }
+    }
+}
+
+.pwnageResultContainer {
+    color: white;
+
+    &.pwned {
+        background-color: darkred;
+    }
+
+    &.notPwned {
+        background-color: darkgreen;
+    }
+}
+
+.signupLink{
+    font-size: 15px;
+}
+

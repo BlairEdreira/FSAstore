@@ -1,0 +1,22 @@
+﻿.btnDefault {
+  background-color: #4e8bd2;
+  color: white; }
+  .btnDefaulthover {
+    background-color: #1b406c; }
+
+.navbar .navbar-brand, .navbar .nav-link, .navbar a {
+  color: white !important; }
+  .navbar .navbar-brand:hover, .navbar .nav-link:hover, .navbar a:hover {
+    color: #4e8bd2;
+    text-decoration: none !important; }
+
+.pwnageResultContainer {
+  color: white; }
+  .pwnageResultContainer.pwned {
+    background-color: darkred; }
+  .pwnageResultContainer.notPwned {
+    background-color: darkgreen; }
+
+.signupLink {
+  font-size: 15px; }
+

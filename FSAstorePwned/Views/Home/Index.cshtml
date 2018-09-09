@@ -1,0 +1,49 @@
+﻿@model FSAstorePwned.Models.PasswordPnwed
+
+<div class="row">
+    <div class="col-lg-12">
+        @using (Html.BeginForm("PasswordCheck", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <h4>
+                Have you been Pwned?
+                <span class="float-right signupLink"> @Html.ActionLink("Sign up for Security Newsletter", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</span>
+            </h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-10 mx-auto">
+                    <label class="control-label " for="Password">Enter your password</label>
+                    @*   @Html.LabelFor(model => model.Password, new { @class = "control-label " })*@
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Check Password" class="btn btnDefault" />
+            </div>
+
+        }
+
+    </div>
+    <hr />
+
+    @if (Model.retHex != "" & Model.retCount != "")
+    {
+        if (Int32.Parse(Model.retCount) > 0)
+        {
+            <div class="col-lg-12 text-center mt-5 p-5 pwnageResultContainer pwned">
+                <h4>@(String.Format("PWNED! That password has been seen {0:N0} times!", Int32.Parse(Model.retCount)))</h4>
+            </div>
+        }
+        else
+        {
+            <div class="col-lg-12 text-center mt-5 p-5 pwnageResultContainer notPwned">
+
+                <h4>No pwnage found!</h4>
+            </div>
+        }
+    }
+
+</div>
+
